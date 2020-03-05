@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/panner-practice/static/js/main.9bffa4c7.chunk.js",
-    "main.js.map": "/panner-practice/static/js/main.9bffa4c7.chunk.js.map",
+    "main.js": "/panner-practice/static/js/main.115118f1.chunk.js",
+    "main.js.map": "/panner-practice/static/js/main.115118f1.chunk.js.map",
     "runtime-main.js": "/panner-practice/static/js/runtime-main.f6d30d79.js",
     "runtime-main.js.map": "/panner-practice/static/js/runtime-main.f6d30d79.js.map",
     "static/js/2.4cd11e3a.chunk.js": "/panner-practice/static/js/2.4cd11e3a.chunk.js",
     "static/js/2.4cd11e3a.chunk.js.map": "/panner-practice/static/js/2.4cd11e3a.chunk.js.map",
     "index.html": "/panner-practice/index.html",
-    "precache-manifest.03e6ab418055ac2b50d3e7cf9d2736cc.js": "/panner-practice/precache-manifest.03e6ab418055ac2b50d3e7cf9d2736cc.js",
+    "precache-manifest.0395a6a3683d0c41de283eded698a75e.js": "/panner-practice/precache-manifest.0395a6a3683d0c41de283eded698a75e.js",
     "service-worker.js": "/panner-practice/service-worker.js",
     "static/js/2.4cd11e3a.chunk.js.LICENSE.txt": "/panner-practice/static/js/2.4cd11e3a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f6d30d79.js",
     "static/js/2.4cd11e3a.chunk.js",
-    "static/js/main.9bffa4c7.chunk.js"
+    "static/js/main.115118f1.chunk.js"
   ]
 }
