@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { setupAudio, Audio } from './audio'
 
 interface Point {
   x: number
@@ -20,8 +22,30 @@ function App() {
   })
 
   const [speaker, setSpeaker] = useState<Point>({ x: WIDTH / 2, y: 0 })
+
+  const [audio, setAudio] = useState<Audio>()
+  useEffect(() => {
+    setupAudio().then(setAudio)
+  }, [])
+  const handlePlay = () => {
+    if (!audio) {
+      return
+    }
+    audio.ctx.resume()
+  }
+  const handleStop = () => {
+    if (!audio) {
+      return
+    }
+    audio.ctx.suspend()
+  }
   return (
     <div className="App">
+      <div>
+        <button onClick={handlePlay}>Play</button>
+        <button onClick={handleStop}>Stop</button>
+      </div>
+
       <svg viewBox={`0, 0, ${WIDTH}, ${HEIGHT}`} style={{ width: 700 }}>
         <rect
           x={0}
