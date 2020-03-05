@@ -1,21 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+interface Point {
+  x: number
+  y: number
+}
+
+interface Status {
+  pos: Point
+  rotation: number
+}
+
+const WIDTH = 500
+const HEIGHT = 500
 
 function App() {
+  const [me, setMe] = useState<Status>({
+    pos: { x: WIDTH / 2, y: HEIGHT / 2 },
+    rotation: 0
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <svg viewBox={`0, 0, ${WIDTH}, ${HEIGHT}`} style={{ width: 700 }}>
+        <rect
+          x={0}
+          y={0}
+          width={WIDTH}
+          height={HEIGHT}
+          stroke="#555"
+          strokeWidth={1}
+          fillOpacity={0}
+        />
+        <g transform={`translate(${me.pos.x}, ${me.pos.y})`}>
+          <polygon points="-4,-6 0,-12 4,-6" fill="black" />
+          <circle cx={0} cy={0} r={4} fill="black" />
+        </g>
+      </svg>
     </div>
   )
 }
