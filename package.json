@@ -2,7 +2,7 @@
   "name": "panner-practice",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://maruware.github.io/panner-practice",
+  "homepage": "http://maruware.github.io/panner-practice/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
