@@ -45,7 +45,7 @@ function App() {
       return
     }
     const p = { x: speaker.x - me.pos.x, y: speaker.y - me.pos.y }
-    const m = 0.1
+    const m = 0.05
     console.log(p)
     audio.panner.setPosition(p.x * m, -p.y * m, 0)
   }, [audio, me, speaker])
