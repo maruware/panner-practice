@@ -127,7 +127,7 @@ function App() {
 
         <div>
           <h3>Usage</h3>
-          <p>Move: Left, Right, Top, Botton</p>
+          <p>Move: Left, Right, Top, Down</p>
           <p>Rotate: Z, X</p>
         </div>
       </Row>
