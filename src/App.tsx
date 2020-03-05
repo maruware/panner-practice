@@ -18,6 +18,8 @@ function App() {
     pos: { x: WIDTH / 2, y: HEIGHT / 2 },
     rotation: 0
   })
+
+  const [speaker, setSpeaker] = useState<Point>({ x: WIDTH / 2, y: 0 })
   return (
     <div className="App">
       <svg viewBox={`0, 0, ${WIDTH}, ${HEIGHT}`} style={{ width: 700 }}>
@@ -33,6 +35,10 @@ function App() {
         <g transform={`translate(${me.pos.x}, ${me.pos.y})`}>
           <polygon points="-4,-6 0,-12 4,-6" fill="black" />
           <circle cx={0} cy={0} r={4} fill="black" />
+        </g>
+
+        <g transform={`translate(${speaker.x}, ${speaker.y})`}>
+          <rect x={-10} y={-5} width={20} height={10} />
         </g>
       </svg>
     </div>
