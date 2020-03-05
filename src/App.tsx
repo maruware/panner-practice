@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { setupAudio, Audio } from './audio'
+import { rotate } from './geometry'
 
 interface Point {
   x: number
@@ -44,14 +45,21 @@ function App() {
     if (!audio) {
       return
     }
-    const p = { x: speaker.x - me.pos.x, y: speaker.y - me.pos.y }
+    const rotatedSpeaker = rotate(
+      me.pos.x,
+      me.pos.y,
+      speaker.x,
+      speaker.y,
+      me.rotation
+    )
+    const p = { x: rotatedSpeaker.x - me.pos.x, y: rotatedSpeaker.y - me.pos.y }
     const m = 0.05
-    console.log(p)
     audio.panner.setPosition(p.x * m, -p.y * m, 0)
   }, [audio, me, speaker])
 
   const handleKeyPressed = (e: React.KeyboardEvent<HTMLElement>) => {
     const d = 2
+    console.log('e.key', e.key)
     switch (e.key) {
       case 'ArrowUp':
         me.pos.y -= d
@@ -65,7 +73,14 @@ function App() {
       case 'ArrowRight':
         me.pos.x += d
         break
+      case 'z':
+        me.rotation = (me.rotation - 4 + 360) % 360
+        break
+      case 'x':
+        me.rotation = (me.rotation + 4 + 360) % 360
+        break
     }
+
     setMe({ ...me })
   }
   return (
@@ -85,7 +100,9 @@ function App() {
           strokeWidth={1}
           fillOpacity={0}
         />
-        <g transform={`translate(${me.pos.x}, ${me.pos.y})`}>
+        <g
+          transform={`translate(${me.pos.x}, ${me.pos.y}) rotate(${me.rotation})`}
+        >
           <polygon points="-4,-6 0,-12 4,-6" fill="black" />
           <circle cx={0} cy={0} r={4} fill="black" />
         </g>
