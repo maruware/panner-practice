@@ -49,8 +49,27 @@ function App() {
     console.log(p)
     audio.panner.setPosition(p.x * m, -p.y * m, 0)
   }, [audio, me, speaker])
+
+  const handleKeyPressed = (e: React.KeyboardEvent<HTMLElement>) => {
+    const d = 2
+    switch (e.key) {
+      case 'ArrowUp':
+        me.pos.y -= d
+        break
+      case 'ArrowDown':
+        me.pos.y += d
+        break
+      case 'ArrowLeft':
+        me.pos.x -= d
+        break
+      case 'ArrowRight':
+        me.pos.x += d
+        break
+    }
+    setMe({ ...me })
+  }
   return (
-    <div className="App">
+    <div className="App" onKeyDown={handleKeyPressed} tabIndex={0}>
       <div>
         <button onClick={handlePlay}>Play</button>
         <button onClick={handleStop}>Stop</button>
