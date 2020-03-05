@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4f23f40734d951188d5b49ae979cef83",
+    "revision": "af135fc1d05314a2643a60da72edc602",
     "url": "/panner-practice/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/panner-practice/static/js/2.4cd11e3a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "158704bd10514c72a2b9",
-    "url": "/panner-practice/static/js/main.8715c769.chunk.js"
+    "revision": "1b5a9dd76c9345d7c9d4",
+    "url": "/panner-practice/static/js/main.9bffa4c7.chunk.js"
   },
   {
     "revision": "741571ed11d36ded7cda",
