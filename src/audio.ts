@@ -6,7 +6,7 @@ export interface Audio {
 
 export async function setupAudio(): Promise<Audio> {
   const ctx = new window.AudioContext()
-  const buffer = await loadSample(ctx, 'sample.mp3')
+  const buffer = await loadSample(ctx, './sample.mp3')
   const source = new window.AudioBufferSourceNode(ctx, {
     buffer: buffer,
     loop: true
