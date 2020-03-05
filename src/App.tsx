@@ -56,13 +56,13 @@ function App() {
       return
     }
     const rotatedSpeaker = rotate(
-      me.pos.x,
-      me.pos.y,
-      speaker.x,
-      speaker.y,
+      0,
+      0,
+      speaker.x - me.pos.x,
+      speaker.y - me.pos.y,
       me.rotation
     )
-    const p = { x: rotatedSpeaker.x - me.pos.x, y: rotatedSpeaker.y - me.pos.y }
+    const p = { x: rotatedSpeaker.x, y: rotatedSpeaker.y }
     const m = 0.05
     audio.panner.setPosition(p.x * m, -p.y * m, 0)
   }, [audio, me, speaker])
